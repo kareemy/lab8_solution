@@ -1,0 +1,51 @@
+@page
+@model lab8_solution.Pages.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Patient</h4>
+<hr />
+<form method="post">
+    <input type="hidden" asp-for="Patient.PatientID">
+    <div class="row mb-3">
+        <div class="col-4">
+            <label asp-for="Patient.FirstName" class="form-label"></label>
+            <input asp-for="Patient.FirstName" class="form-control">
+            <span asp-validation-for="Patient.FirstName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-4">
+            <label asp-for="Patient.LastName" class="form-label"></label>
+            <input asp-for="Patient.LastName" class="form-control">
+            <span asp-validation-for="Patient.LastName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-4">
+            <label asp-for="Patient.AdmitDate" class="form-label"></label>
+            <input asp-for="Patient.AdmitDate" class="form-control">
+            <span asp-validation-for="Patient.AdmitDate" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-4">
+            <label asp-for="Patient.SymptomDescription" class="form-label"></label>
+            <input asp-for="Patient.SymptomDescription" class="form-control">
+            <span asp-validation-for="Patient.SymptomDescription" class="text-danger"></span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
